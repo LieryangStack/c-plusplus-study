@@ -2,49 +2,44 @@
 
 using namespace std;
 
-typedef struct student
-{
-  /* data */
-}student_t;
-
-/* 定义一个命名空间 */
-namespace spaceA{
+namespace spaceA {
   int g_a = 10;
 }
-
-namespace spaceB{
+/**
+ * 命名空间可以嵌套，使用的时候一定到引用到最低层
+*/
+namespace spaceB {
   int a = 20;
 
-  namespace spaceC{
-    struct teacher{
+  namespace spaceC {
+    struct teacher {
       int id;
       char name[64];
     };
   }
 
-  namespace spaceD{
-    struct teacher{
-      int id1;
+  namespace spaceD {
+    struct teacher {
+      int id;
       char name[64];
     };
   }
 
-  //using namespace spaceC;
-
+  // using namespace spaceC;
 }
 
-int main(void){
+int 
+main (int argc, char *argv[]) {
 
-  /* 方式一： */
-  //cout << spaceA::g_a << endl;
-  /* 方式二： */
-  //using spaceA::g_a;
-  //cout << g_a <<endl;
-  /* 方式三： */
+  /* 方式一： 直接指定标识符 */
+  // cout << spaceA::g_a << endl;
+  /* 方式二： 声明命名空间内部变量 */
+  // using spaceA::g_a;
+  /* 方式三： 使用整个命名空间内部变量 */
   using namespace spaceA;
-  cout << g_a <<endl;
+  cout << g_a << endl;
 
-  /* 使用命名空间的时候一定要引用到最底部 */
+ /* 使用命名空间的时候一定要引用到最底部 */
   /* 方式一： */
   //spaceB::spaceC::teacher t1;
 
@@ -58,5 +53,5 @@ int main(void){
 
   cout << t1.name << endl;
 
-  return 0;
+  return EXIT_SUCCESS;
 }

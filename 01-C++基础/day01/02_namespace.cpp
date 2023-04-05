@@ -1,34 +1,25 @@
 #include <iostream>
 
-/* iostream 提供一个叫命名空间的东西，
- * 标准的命名空间是 std
+/* 方式二： 声明命名空间中的一个变量 
+ * using 是一个声明命名空间的关键字
  */
+// using std::cout;
+// using std::endl;
+// using std::cin;
 
-/* 方式二： */
-/* using是一个声明命名空间的关键字 */
-#if 0
-using std::cout; /* 声明命名空间中的一个变量 */
-using std::endl;
-using std::cin;
-#endif
-
-/* 方式三 */
+/* 方式三：声明命名空间中所有变量 */
 using namespace std;
 
-int
-main(int argc, char *argv[]){
+int 
+main (int argc, char *argv[]) {
 
+  /* 方式一： 直接指定标识符 */
+  // std::cout << "hello world" << std::endl;
+
+  /* 方式二 或 方式三 */
   int a = 0;
-#if 0
-  /* 方式一： */
-  std::cout << "hello world" << std::endl;
-#endif
-
-  cout << "hello world" << endl;
-
   cin >> a;
-
-  cout << a;
+  cout << "hello world, a = " << a << endl;
 
   return EXIT_SUCCESS;
 }

@@ -40,6 +40,12 @@
     "streambuf": "cpp",
     "typeinfo": "cpp",
     "string.h": "c",
-    "myarray.h": "c"
+    "myarray.h": "c",
+    "bit": "cpp",
+    "functional": "cpp",
+    "iterator": "cpp",
+    "numeric": "cpp",
+    "random": "cpp",
+    "cinttypes": "cpp"
   }
 }

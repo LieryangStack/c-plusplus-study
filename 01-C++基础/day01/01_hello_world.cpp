@@ -1,38 +1,21 @@
 #include <iostream>
 
-/* 命名空间 */
+/* 使用整个命令空间 */
 using namespace std;
 
-int
-main(int argc, char *argv[]){
-
+int 
+main (int argc, char *argv[]) {
   short a = 0;
-
   /**
-   * cout 就是黑屏幕
-   * endl 就是回车
+   * cout （character output）就是屏幕
+   * endl （end line）就是回车
+   * 能够自动识别数据类型，不需要像printf格式化输出
   */
-  cout << "hello world" <<endl;
+  cout << "hello, a = " << a << endl;
 
   cin >> a;
 
-  /* 默认识别a的数据类型 */
   cout << "a = " << a << endl;
-
 
   return EXIT_SUCCESS;
 }
-
-
-#if 0
-
-#include <stdio.h>
-
-int 
-main(void){
-  printf("hello world\n");
-
-  return 0;
-}
-
-#endif

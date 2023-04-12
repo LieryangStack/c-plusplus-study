@@ -9,60 +9,65 @@ struct teacher{
 };
 
 
-int get_mem(struct teacher **tpp){
-  if(tpp == NULL){
-    return -2;
-  }
+int
+get_mem (struct teacher ** tpp) {
   struct teacher *tp = NULL;
-  tp = (struct teacher *)malloc(sizeof(struct teacher));
-  if(tp == NULL){
+  tp = (struct teacher *) malloc (sizeof (struct teacher));
+  if (tp == NULL) 
     return -1;
-  }
+  tp->id = 100;
+  strcpy (tp->name, "li4");
+
   *tpp = tp;
   return 0;
 }
 
-void free_teacher(struct teacher **tpp){
-  if(tpp == NULL){
+
+void
+free_teacher (struct teacher **tpp) {
+  if (tpp == NULL) 
     return;
+  struct teacher *tp = *tpp;
+  if (tp != NULL) {
+    free (tp);
+    *tpp = NULL;
   }
-  free(*tpp);
-  *tpp = NULL;
 }
 
-int get_mem2(struct teacher * &tp){
-  tp = (struct teacher *)malloc(sizeof(struct teacher));
-  if(tp == NULL){
+
+int
+get_mem2 (struct teacher *& tp) {
+  tp = (struct teacher *) malloc (sizeof (struct teacher));
+  if (tp == NULL)
     return -1;
-  }
   tp->id = 300;
-  strcpy(tp->name, "wangwu");
+  strcpy (tp->name, "wang5");
   return 0;
 }
 
-int free_mem2(struct teacher * &tp){
-  if(tp == NULL){
-    return -1;
+
+void
+free_mem2 (struct teacher *& tp) {
+  if (tp != NULL) {
+    free (tp);
+    tp = NULL;
   }
-  free(tp);
-  tp == NULL;
-  return 0;
 }
 
-int main(void){
 
+int
+main (void) {
   struct teacher *tp = NULL;
 
-  get_mem(&tp);
-  free_teacher(&tp);
+  get_mem (&tp);
+  cout << "id = " << tp->id << ", name = " << tp->name << endl;
+  free_teacher (&tp);
 
-  cout << "-------" << endl;
+  cout << "--------------" << endl;
 
-  get_mem2(tp);
+  get_mem2 (tp);
+  cout << "id = " << tp->id << ", name = " << tp->name << endl;
+  free_mem2 (tp);
 
-  cout << "name = " << tp->name << endl;
-
-  free_mem2(tp);
-
-  return 0;
+  return EXIT_SUCCESS;
 }

@@ -28,7 +28,12 @@ int main(void){
   /* 1. */
   MY_FUNC *fp = NULL;
   fp = func;
-  fp(10, 20);
+  fp (10, 20);
+  (*fp) (10, 20);
+
+  /* 地址结果是一样的 */
+  printf ("fp = %p\n", fp);
+  printf ("*fp = %p\n", *fp);
 
   /* 2. */
   MY_FUNC_P fp2 = NULL;

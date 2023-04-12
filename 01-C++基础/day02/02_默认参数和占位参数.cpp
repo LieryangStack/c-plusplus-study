@@ -2,17 +2,17 @@
 
 using namespace std;
 
-void
-func(int a = 666){
+void 
+func (int a = 666) {
   cout << "a = " << a << endl;
 }
 
 /**
  * 默认参数只能从最后边开始
- * get_volume(int len = 5, int width, int height);  //err
+ * get_volume (int len = 5, int width, int height); //err
 */
 int
-get_volume(int len, int width, int height = 5){
+get_volume (int len, int width, int height = 5) {
   cout << "len = " << len << endl;
   cout << "w = " << width << endl;
   cout << "h = " << height << endl;
@@ -20,35 +20,41 @@ get_volume(int len, int width, int height = 5){
   return len * width * height;
 }
 
-
-void 
-fun2(int x, int){
-  cout << "x = " << x << endl;
+void
+test (int a, int b = 1, int c =2, int d = 3) {
+  cout << "b = " << b << endl;
+  cout << "c = " << c << endl;
+  cout << "d = " << d << endl;
 }
 
+void 
+func2(int x, int){
+  cout << "x = " << x << endl;
+}
 
 /**
  * 默认参数和占位参数结合在一起 int = 10
+ * 如果 func3 (int x, int)，调用的时候必须是 func3 (10, 5);
 */
 void
-fun3(int x , int = 10){
+func3(int x , int = 10){
   cout << "x = " << x << endl;
 }
 
 
-int main(void){
+int 
+main (int argc, char* argv[]) {
 
-  func();
-  func(10);
+  /* 如果调用该函数的时候，给定的实参，则不使用默认参数 */
+  func (15);
+  func ();
 
-  int len = 10;
-  int w = 20;
-  int h = 30;
+  cout << "-----------" << endl;
 
-  cout << "volume :\n" << get_volume(len, w) << endl;
+  test (1, 11);
 
-  fun3(10);
-  fun3(10, 5);
+  func3 (10);
+  func3 (10, 5);
 
-  return 0;
+  return EXIT_SUCCESS;
 }

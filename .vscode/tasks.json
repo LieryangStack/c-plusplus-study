@@ -8,10 +8,10 @@
 			"args": [
 				"-fdiagnostics-color=always",
 				"-g",
-				//"-I.\\09_求圆的面积",
-				//"${fileDirname}\\09_求圆的面积\\Circle.cpp",
-				//"-I.\\07_自定义字符串类",
-				//"${fileDirname}\\07_自定义字符串类\\MyString.cpp",
+				"-I./09_求圆的面积",
+				"${fileDirname}/09_求圆的面积/Circle.cpp",
+				// "-I./07_自定义字符串类",
+				// "${fileDirname}/07_自定义字符串类/MyString.cpp",
 				"${file}",
 				"-o",
 				"${fileDirname}/${fileBasenameNoExtension}"
@@ -23,7 +23,7 @@
 				"$gcc"
 			],
 			"group": "build",
-			"detail": "编译器: \"C:\\Program Files (x86)\\mingw64\\bin\\g++.exe\""
+			"detail": "编译器"
 		}
 	]
 }

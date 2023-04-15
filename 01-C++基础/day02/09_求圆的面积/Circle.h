@@ -1,6 +1,9 @@
 #ifndef _CIRCLE_H__
 #define _CIRCLE_H__
 
+/*或者使用*/
+// #pragma once
+
 class Circle{
 public:
   /* 设置半径 */

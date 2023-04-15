@@ -33,6 +33,8 @@ AdvHero::printHero () {
 
 /* {} 以内叫类的内部， 以外叫类的外部 */
 class Animal {
+  /* 如果不写访问属性，默认定义的成员变量属于private属性 */
+  int test;
 public :
   char kind[64];
   char color[64];
@@ -51,6 +53,7 @@ void
 Animal::printAnimal () {
   cout << "kind = " << kind << endl;
   cout << "color = " << color << endl;
+  cout << "test = " << test << endl;
 }
 
 void
@@ -61,6 +64,7 @@ Animal::write () {
 void 
 Animal::run () {
   cout << kind << "跑起来了" << endl;
+  this->test = 1;
 }
 
 int 
@@ -84,5 +88,6 @@ main () {
   strcpy(dog.kind, "dog");
   strcpy(dog.color, "white");
 
-  dog.printAnimal();
+  dog.run ();
+  dog.printAnimal ();
 }

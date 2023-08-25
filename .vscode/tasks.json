@@ -8,8 +8,8 @@
 			"args": [
 				"-fdiagnostics-color=always",
 				"-g",
-				"-I./09_求圆的面积",
-				"${fileDirname}/09_求圆的面积/Circle.cpp",
+				//"-I./09_求圆的面积",
+				//"${fileDirname}/09_求圆的面积/Circle.cpp",
 				// "-I./07_自定义字符串类",
 				// "${fileDirname}/07_自定义字符串类/MyString.cpp",
 				"${file}",

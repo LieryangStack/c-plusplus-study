@@ -17,6 +17,7 @@ main (int argc, char *argv[]) {
 
   cout << "a = " << a << endl;
 
+
   return EXIT_SUCCESS;
 }
 
